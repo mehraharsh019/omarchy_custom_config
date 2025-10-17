@@ -1,4 +1,0 @@
-# Omarchy-specific environment tweaks
-unset QT_STYLE_OVERRIDE
-export QT_QPA_PLATFORMTHEME=qt6ct
-
