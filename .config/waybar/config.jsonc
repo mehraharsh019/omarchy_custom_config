@@ -60,7 +60,8 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}%",
-    "on-click": "$TERMINAL --class=btop --title=btop -e btop"
+    "on-click": "$TERMINAL -o font_size=10 --class=cfloat -e btop" 
+    // cfloat is the custom class for floating terminals in Hyprland
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -102,10 +103,11 @@
     }
   },
   "bluetooth": {
-    "format": "",
-    "format-disabled": "󰂲",
-    "format-connected": " {device_battery_percentage}%",
+    "max-length": 10,
+    "format": " {status}",
+    "format-connected": " {device_alias}",
     "tooltip-format": "Devices connected: {num_connections}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueberry"
   },
   "pulseaudio": {
@@ -139,7 +141,7 @@
   },
   "tray": {
     "icon-size": 14,
-    // "spacing": 12
+    "spacing": 12
   },
   "custom/separator" : {
     "format": "|",
