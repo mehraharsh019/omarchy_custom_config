@@ -3,15 +3,20 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "modules-left": ["custom/omarchy", "hyprland/workspaces"],
+  "modules-left": ["custom/omarchy", "custom/separator", "hyprland/workspaces"],
   "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
   "modules-right": [
     "tray",
     // "group/tray-expander",
+    "custom/separator",
     "bluetooth",
+    "custom/separator",
     "network",
+    "custom/separator",
     "pulseaudio",
+    "custom/separator",
     "cpu",
+    "custom/separator",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -54,19 +59,20 @@
 
   "cpu": {
     "interval": 5,
-    "format": "󰍛",
-    "on-click": "$TERMINAL -e btop"
+    "format": "󰍛 {usage}%",
+    "on-click": "$TERMINAL --class=btop --title=btop -e btop"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
-    "on-click-right": "omarchy-cmd-tzupdate"
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "network": {
+    "max-length": 10,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
-    "format-wifi": "{icon}",
+    "format-wifi": "{icon} {essid}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
@@ -98,12 +104,12 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "",
+    "format-connected": " {device_battery_percentage}%",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueberry"
   },
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "on-click": "$TERMINAL --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
@@ -134,5 +140,9 @@
   "tray": {
     "icon-size": 14,
     // "spacing": 12
+  },
+  "custom/separator" : {
+    "format": "|",
+    "tooltip": false
   }
 }
