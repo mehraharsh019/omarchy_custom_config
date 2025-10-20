@@ -4,8 +4,7 @@
   "position": "top",
   "spacing": 0,
   "modules-left": [
-    "custom/omarchy",
-    "custom/separator",
+    "custom/omarchy",         "custom/separator",
     "hyprland/workspaces"
   ],
   "modules-center": [
@@ -148,6 +147,7 @@
     "format": "{icon} {volume}%",
     "on-click": "$TERMINAL --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
+    "reverse-scrolling": true,
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
@@ -181,7 +181,7 @@
     "return-type": "json"
   },
   "tray": {
-    "icon-size": 14,
+    "icon-size": 13,
     "spacing": 12
   },
   "custom/separator": {
