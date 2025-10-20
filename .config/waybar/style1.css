@@ -61,8 +61,8 @@ window#waybar {
 }
 
 #custom-separator {
-  color: @foreground;
-  padding: 0px 2px;
+  color: alpha(@foreground, 0.3);
+  padding: 0px 1px;
 }
 
 #custom-expand-icon {
