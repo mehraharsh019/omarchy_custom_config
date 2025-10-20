@@ -3,20 +3,24 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "modules-left": ["custom/omarchy", "custom/separator", "hyprland/workspaces"],
-  "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
+  "modules-left": [
+    "custom/omarchy",
+    "custom/separator",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/update",
+    "custom/screenrecording-indicator"
+  ],
   "modules-right": [
-    "tray",
-    // "group/tray-expander",
-    "custom/separator",
-    "bluetooth",
-    "custom/separator",
-    "network",
-    "custom/separator",
-    "pulseaudio",
-    "custom/separator",
-    "cpu",
-    "custom/separator",
+    "tray",                   "custom/separator",
+    // "group/tray-expander", "custom/separator",
+    "bluetooth",              "custom/separator",
+    "network",                "custom/separator",
+    "pulseaudio",             "custom/separator",
+    "cpu",                    "custom/separator",
+    "temperature",            "custom/separator",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -56,11 +60,10 @@
     "signal": 7,
     "interval": 3600
   },
-
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}%",
-    "on-click": "$TERMINAL -o font_size=10 --class=cfloat -e btop" 
+    "on-click": "$TERMINAL -o font_size=10 --class=cfloat -e btop"
     // cfloat is the custom class for floating terminals in Hyprland
   },
   "clock": {
@@ -70,7 +73,13 @@
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
     "format": "{icon}",
     "format-wifi": "{icon} {signalStrength}%",
     "format-ethernet": "󰀂",
@@ -88,8 +97,30 @@
     "format-charging": "{icon} {capacity}%",
     "format-plugged": "",
     "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
     },
     "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
@@ -106,8 +137,11 @@
     "format": "󰂯",
     "format-on": " on",
     "format-disabled": "󰂲 off",
-    "format-connected": " {device_alias}",
-    "tooltip-format": "Devices connected: {num_connections}",
+    "format-connected": "󰂱 {num_connections}",
+    "tooltip-format": "{controller_alias}\n\nController: {status}",
+    "tooltip-format-connected": "{controller_alias}\n\nConnected devices:\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
     "on-click": "blueberry"
   },
   "pulseaudio": {
@@ -118,7 +152,11 @@
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     }
   },
   "group/tray-expander": {
@@ -127,7 +165,10 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "tray"]
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
   },
   "custom/expand-icon": {
     "format": " ",
@@ -143,8 +184,11 @@
     "icon-size": 14,
     "spacing": 12
   },
-  "custom/separator" : {
+  "custom/separator": {
     "format": "|",
     "tooltip": false
+  },
+  "temperature": {
+    "format": " {temperatureC}°C"
   }
 }
