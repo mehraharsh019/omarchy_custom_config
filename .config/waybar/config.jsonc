@@ -63,7 +63,7 @@
     "interval": 5,
     "format": "󰍛 {usage}%",
     "on-click": "$TERMINAL -o font_size=10 --class=cfloat -e btop"
-    // cfloat is the custom class for floating terminals in Hyprland
+    // cfloat is the custom class for floating terminal in this custom hyprland config
   },
   "clock": {
     "format": "{:L%A %H:%M}",
