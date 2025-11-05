@@ -2,15 +2,11 @@
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "spacing": 0,
   "modules-left": [
     "custom/omarchy",
     "clock",
     "hyprland/workspaces",
     "custom/media"
-  ],
-  "modules-center": [
-
   ],
   "modules-right": [
     "custom/update",
@@ -65,7 +61,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}%",
-    "on-click": "kitty -o font_size=10 --class=cfloat -e btop"
+    "on-click": "kitty -o font_size=12 --class=cfloat -e btop"
     // cfloat is the custom class for floating terminal in this custom hyprland config
   },
   "clock": {
@@ -176,14 +172,14 @@
   "temperature": {
     "interval": 5,
     "format": " {temperatureC}°C",
-    "on-click": "kitty -o font_size=10 --class=cfloat -e btop"
+    "on-click": "kitty -o font_size=12 --class=cfloat -e btop"
   },
   "memory": {
     "interval": 5,
     "format": " {used}G",
     "tooltip": true,
     "tootltip-format": "Used:\t{used}GiB\nTotal:\t{total}GiB\nFree:\t{free}GiB",
-    "on-click": "kitty -o font_size=10 --class=cfloat -e btop"
+    "on-click": "kitty -o font_size=12 --class=cfloat -e btop"
   },
   "custom/media": {
     "format": "{0} {1}",
