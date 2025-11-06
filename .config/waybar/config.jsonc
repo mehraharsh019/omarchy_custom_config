@@ -8,6 +8,9 @@
     "hyprland/workspaces",
     "custom/media"
   ],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
     "custom/update",
     "custom/screenrecording-indicator",
@@ -20,6 +23,20 @@
     "pulseaudio",
     "battery"
   ],
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 30,
+    "separate-outputs": true,
+    "tooltip": false,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*)Mozilla Firefox": "󰈹 Firefox",
+      "(.*) - Visual Studio Code": "󰨞 $1",
+      "(.*)Visual Studio Code": "󰨞 Code",
+      "(.*)Spotify": "󰓇 Spotify",
+      "(.*)Discord": "󰙯 Discord"
+    }
+  },
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
@@ -40,8 +57,7 @@
       "1": [],
       "2": [],
       "3": [],
-      "4": [],
-      "5": []
+      "4": []
     }
   },
   "custom/omarchy": {
@@ -61,7 +77,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}%",
-    "on-click": "kitty -o font_size=12 --class=cfloat -e btop"
+    "on-click": "$TERMINAL -o font_size=12 --class=cfloat -e btop"
     // cfloat is the custom class for floating terminal in this custom hyprland config
   },
   "clock": {
@@ -166,20 +182,19 @@
     "return-type": "json"
   },
   "tray": {
-    // "icon-size": 13,
     "spacing": 12
   },
   "temperature": {
     "interval": 5,
     "format": " {temperatureC}°C",
-    "on-click": "kitty -o font_size=12 --class=cfloat -e btop"
+    "on-click": "$TERMINAL -o font_size=12 --class=cfloat -e btop"
   },
   "memory": {
     "interval": 5,
     "format": " {used}G",
     "tooltip": true,
     "tootltip-format": "Used:\t{used}GiB\nTotal:\t{total}GiB\nFree:\t{free}GiB",
-    "on-click": "kitty -o font_size=12 --class=cfloat -e btop"
+    "on-click": "$TERMINAL -o font_size=12 --class=cfloat -e btop"
   },
   "custom/media": {
     "format": "{0} {1}",
@@ -188,10 +203,10 @@
     "max-length": 40,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+    // "smooth-scrolling-threshold": 10,
+    // "on-scroll-up": "playerctl next",
+    // "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
     "tooltip": true,
     "tootltip-format": "{0}\n{1}"
   }
