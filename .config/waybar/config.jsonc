@@ -25,7 +25,7 @@
   ],
   "hyprland/window": {
     "format": "{}",
-    "max-length": 30,
+    "max-length": 40,
     "separate-outputs": true,
     "tooltip": false,
     "rewrite": {
@@ -77,7 +77,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}%",
-    "on-click": "$TERMINAL -o font_size=12 --class=cfloat -e btop"
+    "on-click": "$TERMINAL -o font_size=10 --class=cfloat -e btop"
     // cfloat is the custom class for floating terminal in this custom hyprland config
   },
   "clock": {
