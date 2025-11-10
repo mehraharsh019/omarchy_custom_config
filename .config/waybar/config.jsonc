@@ -193,7 +193,7 @@
     "interval": 5,
     "format": " {used}G",
     "tooltip": true,
-    "tootltip-format": "Used:\t{used}GiB\nTotal:\t{total}GiB\nFree:\t{free}GiB",
+    "tooltip-format": "Used:\t{used}GiB\nTotal:\t{total}GiB\nFree:\t{free}GiB",
     "on-click": "xdg-terminal-exec --app-id=com.omarchy.Omarchy --title=Omarchy -e btop"
   },
   "custom/media": {
