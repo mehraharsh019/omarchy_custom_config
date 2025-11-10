@@ -197,7 +197,7 @@
     "on-click": "xdg-terminal-exec --app-id=com.omarchy.Omarchy --title=Omarchy -e btop"
   },
   "custom/media": {
-    "format": "{0} {1}",
+    "format": "{text}",
     "escape": true,
     "return-type": "json",
     "max-length": 40,
@@ -208,6 +208,6 @@
     // "on-scroll-down": "playerctl previous",
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
     "tooltip": true,
-    "tootltip-format": "{0}\n{1}"
+    "tooltip-format": "{alt}"
   }
 }
