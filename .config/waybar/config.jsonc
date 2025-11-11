@@ -16,7 +16,7 @@
     "custom/screenrecording-indicator",
     "tray",
     "cpu",
-    "temperature",
+    // "temperature",
     "memory",
     "bluetooth",
     "network",
@@ -191,16 +191,16 @@
   },
   "memory": {
     "interval": 5,
-    "format": " {used}G",
+    "format": " {used:.1f}G",
     "tooltip": true,
-    "tooltip-format": "Used:\t{used}GiB\nTotal:\t{total}GiB\nFree:\t{free}GiB",
+    "tooltip-format": "Used:\t{used}GiB\nFree:\t{free}GiB\nTotal:\t{total}GiB",
     "on-click": "xdg-terminal-exec --app-id=com.omarchy.Omarchy --title=Omarchy -e btop"
   },
   "custom/media": {
     "format": "{text}",
     "escape": true,
     "return-type": "json",
-    "max-length": 40,
+    "max-length": 30,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
     // "smooth-scrolling-threshold": 10,
@@ -208,6 +208,6 @@
     // "on-scroll-down": "playerctl previous",
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
     "tooltip": true,
-    "tooltip-format": "{alt}"
+    "tooltip-format": "{text}\n\n{alt}"
   }
 }
