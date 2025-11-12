@@ -182,6 +182,7 @@
     "return-type": "json"
   },
   "tray": {
+    "icon-size": 12,
     "spacing": 12
   },
   "temperature": {
