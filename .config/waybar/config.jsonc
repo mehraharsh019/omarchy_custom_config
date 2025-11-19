@@ -19,7 +19,7 @@
     // "temperature",
     "memory",
     "bluetooth",
-    "network",
+    // "network", switched to networkmanager applet in tray
     "pulseaudio",
     "battery"
   ],
