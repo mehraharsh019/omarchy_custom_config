@@ -20,10 +20,10 @@
     "custom/screenrecording-indicator",
     "tray",
     "cpu",
-    // "temperature",
+    "temperature",
     "memory",
     "bluetooth",
-    "network", // switched to networkmanager applet in tray
+    "network",
     "pulseaudio",
     "battery"
   ],
@@ -82,7 +82,19 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {usage}%",
-    "on-click": "omarchy-launch-tui btop"
+    "on-click": "omarchy-launch-or-focus-tui btop"
+  },
+  "temperature": {
+    "interval": 3,
+    "format": " {temperatureC}°C",
+    "on-click": "omarchy-launch-or-focus-tui btop"
+  },
+  "memory": {
+    "interval": 3,
+    "format": " {used:.1f}G",
+    "tooltip": true,
+    "tooltip-format": "Used:\t{used:5.2f}GiB\nFree:\t{avail:5.2f}GiB\nTotal:\t{total:5.2f}GiB",
+    "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
     "format": "{:L%a %H:%M}",
@@ -164,8 +176,8 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    // "on-click": "omarchy-launch-or-focus-tui wiremix",
-    "on-click": "pavucontrol",
+    "on-click": "omarchy-launch-or-focus-tui wiremix",
+    // "on-click": "pavucontrol",
     "on-click-right": "pamixer -t",
     "reverse-scrolling": true,
     "tooltip-format": "Playing at {volume}%",
@@ -187,18 +199,6 @@
   },
   "tray": {
     "spacing": 12
-  },
-  "temperature": {
-    "interval": 3,
-    "format": " {temperatureC}°C",
-    "on-click": "omarchy-launch-tui btop"
-  },
-  "memory": {
-    "interval": 3,
-    "format": " {used:.1f}G",
-    "tooltip": true,
-    "tooltip-format": "Used:\t{used:5.2f}GiB\nFree:\t{avail:5.2f}GiB\nTotal:\t{total:5.2f}GiB",
-    "on-click": "omarchy-launch-tui btop"
   },
   "custom/media": {
     "format": "{text}",
