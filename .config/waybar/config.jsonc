@@ -13,7 +13,8 @@
     "custom/media"
   ],
   "modules-center": [
-    "hyprland/window"
+    "hyprland/window",
+    "custom/privacy-dots"
   ],
   "modules-right": [
     "custom/update",
@@ -156,7 +157,7 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
-    "on-click": "omarchy-menu power",
+    // "on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
       "critical": 10
@@ -213,5 +214,14 @@
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
     "tooltip": true,
     "tooltip-format": "{text}\n\n{alt}"
-  }
+  },
+  "custom/privacy-dots": {
+    "exec": "privacy-dots",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{text}",
+    "tooltip": true,
+    "escape": false,
+    "markup": "pango"
+    }
 }

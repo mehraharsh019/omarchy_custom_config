@@ -36,12 +36,13 @@ window#waybar {
 #custom-omarchy,
 #custom-screenrecording-indicator,
 #custom-update,
-#custom-media {
+#custom-media,
+#custom-privacy-dots {
   background-color: alpha(@background, 0.8);
   color: @foreground;
   padding: 4px 8px;
   border-radius: 10px;
-  border: 1px solid alpha(@foreground, 0.5);
+  border: 1px solid alpha(@foreground, 0.3);
 }
 
 #cpu:hover,
